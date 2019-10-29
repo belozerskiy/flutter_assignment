@@ -33,22 +33,23 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            title: Text(_title),
+        appBar: AppBar(
+          title: Text(_title),
+        ),
+        body: Center(
+          child: Column(
+            children: <Widget>[
+              CustomText(
+                text: _textList[_currentTextIndex],
+              ),
+              CustomTextControl(
+                buttonText: _buttonText,
+                handleTextChange: _handleTextChange,
+              ),
+            ],
           ),
-          body: Center(
-            child: Column(
-              children: <Widget>[
-                CustomText(
-                  text: _textList[_currentTextIndex],
-                ),
-                CustomTextControl(
-                  buttonText: _buttonText,
-                  handleTextChange: _handleTextChange,
-                )
-              ],
-            ),
-          )),
+        ),
+      ),
     );
   }
 }
